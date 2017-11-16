@@ -65,15 +65,41 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-document.addEventListener("DOMContentLoaded", e => {
-  const elem = document.getElementById('status');
-  if (elem) {
-    elem.innerText = "The JavaScript has loaded.";
-  }
+"use strict";
+
+
+var _timer = __webpack_require__(1);
+
+var _timer2 = _interopRequireDefault(_timer);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+document.addEventListener("DOMContentLoaded", _timer2.default);
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
 });
+var refreshInSeconds = 1;
+var count = 0;
+var updateTimeout = void 0;
 
+var elem = document.getElementById('status');
+
+function tick() {
+  elem.innerText = 'tick() has fired ' + ++count + ' times.';
+  updateTimeout = setTimeout(tick, refreshInSeconds * 1000);
+}
+
+exports.default = tick;
 
 /***/ })
 /******/ ]);
