@@ -4,7 +4,7 @@
   "description": "A small enplug player app that always remains on the screen.",
   "main": "src/index.js",
   "scripts": {
-    "test": "test"
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/jrkoch/never-lets-go/issues"
   },
-  "homepage": "https://github.com/jrkoch/never-lets-go#readme"
+  "homepage": "https://github.com/jrkoch/never-lets-go#readme",
+  "devDependencies": {
+    "webpack": "^3.8.1"
+  }
 }
