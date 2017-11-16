@@ -1,0 +1,19 @@
+{
+  "name": "never-lets-go",
+  "version": "1.0.0",
+  "description": "A small enplug player app that always remains on the screen.",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jrkoch/never-lets-go.git"
+  },
+  "author": "Apps team at Syncromatics",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jrkoch/never-lets-go/issues"
+  },
+  "homepage": "https://github.com/jrkoch/never-lets-go#readme"
+}
