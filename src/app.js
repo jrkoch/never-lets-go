@@ -6,7 +6,16 @@ let updateTimeout;
 let tickCounter;
 
 function tick() {
-  tickCounter.innerText = ++count + "";
+  count++;
+
+  // I thought that this was because we never got the next asset, and had the player
+  // display 1 asset, so I am attempting to get the next one every 10 ticks to trigger
+  // the player to change.  It does not seem to have an effect.
+  if (count % 10 === 0) {
+    enplug.assets.getNext();
+  }
+
+  tickCounter.innerText = count + "";
   updateTimeout = setTimeout(tick, tickIntervalSeconds * 1000);
 }
 

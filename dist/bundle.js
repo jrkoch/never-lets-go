@@ -1474,7 +1474,16 @@ var updateTimeout = void 0;
 var tickCounter = void 0;
 
 function tick() {
-  tickCounter.innerText = ++count + "";
+  count++;
+
+  // I thought that this was because we never got the next asset, and had the player
+  // display 1 asset, so I am attempting to get the next one every 10 ticks to trigger
+  // the player to change.  It does not seem to have an effect.
+  if (count % 10 === 0) {
+    _playerSdk2.default.assets.getNext();
+  }
+
+  tickCounter.innerText = count + "";
   updateTimeout = setTimeout(tick, tickIntervalSeconds * 1000);
 }
 
