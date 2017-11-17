@@ -1482,8 +1482,15 @@ var app = {
   start: function start() {
     tickCounter = document.getElementById('tick-count');
     document.getElementById('app').style.display = 'block';
+
+    // I had thought that setting the interval here was what was causing the app to stay on
+    // the screen indefinitely, but commenting out this line (so that the interval is never set)
+    // has no effect.
     tick();
+
     _playerSdk2.default.appStatus.start();
+
+    // just to be safe...
     _playerSdk2.default.appStatus.setCanInterrupt(true);
   }
 };
