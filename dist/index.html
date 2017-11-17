@@ -16,10 +16,18 @@
 
       <div class="container">
         <h1>never-lets-go</h1>
-        <p class="lead">
-          Once this app is displayed, it will never disappear off the screen.
-        </p>
-        <p id="status" />
+
+        <div id="dashboard" style="display: none;">
+          <p class="lead">Welcome to the Dashboard.</p>
+          <p>Hit "Deploy to Displays" to deploy this app to a display group and see it in action.</p>
+        </div>
+
+        <div id="app" style="display: none;">
+            <p class="lead">
+              Once this app is displayed, it will never disappear off the screen.
+            </p>
+          <p>tick() has fired <span id="tick-count">0</span> times.</p>
+        </div>
       </div>
 
     </main><!-- /.container -->

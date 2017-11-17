@@ -23,6 +23,7 @@
     "webpack": "^3.8.1"
   },
   "dependencies": {
+    "@enplug/dashboard-sdk": "^4.1.4",
     "@enplug/player-sdk": "^0.4.12"
   }
 }

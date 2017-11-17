@@ -1,7 +1,8 @@
-import enplug from '@enplug/player-sdk';
-import timer from './timer';
+import app from './app';
+import dashboard from './dashboard';
 
-document.addEventListener("DOMContentLoaded", timer);
-
-enplug.appStatus.start();
-enplug.appStatus.setCanInterrupt(true);
+document.addEventListener("DOMContentLoaded", () => {
+  const isDashboard = window.location.search.indexOf('dashboard') > -1;
+  const runner = isDashboard ? dashboard : app;
+  runner.start();
+});
