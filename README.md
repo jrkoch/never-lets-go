@@ -16,10 +16,31 @@ Add the never-lets-go app to an Enplug display group.  Also add another app so y
 player rotate through.  Then, start up the player.  Once it displays the never-lets-go app, it will
 never rotate on to the next app.
 
-## Interval?
+## What I've tried
 
-I thought it was because of setting the interval in the `tick()` call in `app.js`, but commenting
-this line had no effect.
+I've tried a couple of things to get the app to allow the transition.
+
+### enplug.appStatus.setCanInterrupt
+
+Calling `enplug.appStatus.setCanInterrupt(true);` in order to ensure the app can be interrupted (see
+`app.js` line 35) has no effect.
+
+### setTimeout
+
+Our actual app reloads live data from our servers by repeatedly deferring calls with `setTimeout`,
+which is behavior I've recreated in this demo app.  I thought that that might be causing a problem,
+so I've also tried this demo app without deferring any calls.  It appears to have no effect.  You
+can disable setting out interval by commenting the call to `tick()` on line 30 of `app.js`.
+
+### enplug.assets.getNext()
+
+My next thought was that perhaps it had to do with setting the app to display 1 asset.  I tried a
+couple of things to investigate this:
+
+* Setting the app to play for 30 seconds each time instead of playing one asset.  This had no
+  effect.
+* Repeatedly calling `enplug.assets.getNext()` in an attempt to tell the SDK that we are playing
+  through the assets (see line 15 of `app.js`).  This also appeared to have no effect.
 
 ## Building
 
